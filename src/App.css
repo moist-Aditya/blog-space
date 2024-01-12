@@ -1,38 +1,220 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,200;8..144,400;8..144,700;8..144,900&display=swap');
+
+/* Reset start */
+/* makes sizing simpler */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* remove default spacing */
+/* force styling of type through styling, rather than elements */
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* dark mode user-agent-styles */
+/* improves punctuation in supported browsers */
+html {
+  color-scheme: dark light;
+  hanging-punctuation: first last;
+}
+
+/* min body height */
+body {
+  min-height: 100svh;
+}
+
+/* responsive images/videos */
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+/* Improved heading in supported browsers */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/* improve readability with max-width on paragraphs and lists */
+/* prevent orphans in supported browsers */
+p,
+li {
+  max-width: var(--p-max-width, 65ch);
+  text-wrap: pretty;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Reset ends here */
+
+
+/* Utility Classes start */
+.flex {
+  display: flex;
+  flex-direction: row;
+  gap: var(--gap, 1rem);
+}
+.sr-only {
+  display: none;
+}
+.partial {
+  max-lines: 4rem;
+}
+/* Utility classes end here */
+
+
+
+/* My CSS start */
+html {
+  color-scheme: dark;
+}
+body {
+  font-family: 'Roboto Flex', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  background-attachment: fixed;
+  background-image: url("./earth-bg.jpg");
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  overflow-x: hidden;
+}
+h1 {
+  font-size: 3rem;
+  font-weight: 900;
+}
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+p {
+  font-size: 1rem;
+  font-weight: 200;
+  max-width: 1000px;
+}
+
+/* Header start */
+.logo {
+  width: 4rem;
+  aspect-ratio: 1;
+  margin: .6rem;
+
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(34deg) brightness(105%) contrast(104%);
+}
+.primary-header {
+  align-items: center;
+  justify-content: space-between;
+}
+.primary-navigation {
+  z-index: 1000;
+  padding: 1rem;
+  padding-right: clamp(20%, 40dvw, 80dvw);
+  background-color: hsla(0, 0%, 100%, .05);
+  backdrop-filter: blur(.2rem);
+}
+.primary-navigation a {
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.primary-navigation a:hover {
+  color: hsla(0, 0%, 100%, .5);
+}
+.mobile-nav-toggle {
+  z-index: 9999;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 2rem;
+  aspect-ratio: 1;
+  background: none;
+  background-image: url("./hamburger.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .primary-navigation {
+    position: fixed;
+    inset: 0 0 0 40%;
+    padding: min(10rem, 20dvh) 2rem;
+    background-color: hsla(0, 0%, 0%, .3);
+    backdrop-filter: blur(.5rem);
+
+    ul {
+      flex-direction: column;
+      --gap: 3rem;
+    }
+
+    translate: 100%;
+    transition: translate 350ms ease-out;
+  }
+  .primary-navigation[data-visible="true"] {
+    translate: 0%;
+  }
+  .mobile-nav-toggle[aria-expanded="true"] {
+    background-image: url("./cross.svg");
+  }
+  .mobile-nav-toggle {
+    display: block;
+  }
+}
+/* Header end */
+
+/* Main start */
+main {
+  padding: 1rem 1.2rem;
+}
+.home {
+  max-width: min(90dvw, 1000px);
+  margin-inline: auto;
+}
+.list-title {
+  letter-spacing: 2px;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.blog-container {
+  margin: 2rem auto;
+  padding: 1.5rem 1rem;
+  border-radius: .5em;
+  background-color: hsla(0, 0%, 0%, .8);
+  backdrop-filter: blur(.2rem);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.blog-title {
+  cursor: pointer;
+  font-size: 2rem;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.blog-author {
+  opacity: 0.7;
+  font-size: 1rem;
+  margin-left: 5%;
+  margin-block: .5rem;
 }
-
-.App-link {
-  color: #61dafb;
+.blog-body {
+  font-size: 1.05rem;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/* Main end */
