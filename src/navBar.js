@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
 
@@ -7,18 +8,19 @@ const Navbar = () => {
         <div className="nav">
 
             <button className="mobile-nav-toggle"
-            aria-controls='primary-navigation' aria-expanded={isExpanded}
-            onClick={() => setExpanded(!isExpanded)}>
+                aria-controls='primary-navigation' aria-expanded={isExpanded}
+                onClick={() => setExpanded(!isExpanded)}>
+                
                 <span className='sr-only'>Menu</span>
             </button>
 
 
             <nav className="primary-navigation" data-visible={isExpanded}>
                 <ul className="flex">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/">Categories</a></li>
-                    <li><a href="/">About</a></li>
-                    <li><a href="/">Contact</a></li>
+                    <li><Link to="/">Home</Link></li>
+                    <li><Link to="/create">Create</Link></li>
+                    <li><Link to="/">About</Link></li>
+                    <li><Link to="/">Contact</Link></li>
                 </ul>
             </nav>
 
