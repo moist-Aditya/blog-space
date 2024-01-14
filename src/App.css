@@ -26,7 +26,7 @@ html {
 
 /* min body height */
 body {
-  min-height: 100svh;
+  min-height: 100dvh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
 }
@@ -219,12 +219,12 @@ p {
 
 /* Main start */
 main {
-  margin-top: 5rem;
   padding-block: 1rem;
 }
 .content {
   max-width: min(95dvw, 1000px);
   margin-inline: auto;
+  margin-top: 5rem;
 }
 .title {
   display: inline;
@@ -326,7 +326,7 @@ article {
   flex-direction: column;
   --gap: .625rem;
 }
-.create button {
+button {
   display: block;
   margin-inline: auto;
   margin-top: 1rem;
@@ -340,9 +340,21 @@ article {
   cursor: pointer;
   transition: all linear 100ms;
 }
-.create button:hover {
+button:hover {
   background-color: var(--clr-highlight);
   color: var(--clr-dark);
+}
+
+.btn-delete {
+  padding: .2rem .4rem;
+  font-size: 1.2rem;
+  margin-top: 4rem;
+  color: var(--clr-dark);
+  border-color: var(--clr-dark);
+}
+.btn-delete:hover {
+  color: var(--clr-primary);
+  background-color: var(--clr-dark);
 }
 /* Main end */
 
