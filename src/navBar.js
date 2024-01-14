@@ -1,9 +1,16 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
+    const navigation = [
+        { name: 'Home', href: '/' },
+        { name: 'Create', href: '/create' },
+        { name: 'About', href: '/about' },
+        { name: 'Contact', href: '/contact' }
+    ];
 
     const [isExpanded, setExpanded] = useState(false);
+
     return (
         <div className="nav">
 
@@ -17,10 +24,15 @@ const Navbar = () => {
 
             <nav className="primary-navigation" data-visible={isExpanded}>
                 <ul className="flex">
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/create">Create</Link></li>
-                    <li><Link to="/">About</Link></li>
-                    <li><Link to="/">Contact</Link></li>
+                    
+                    { navigation.map(item => (
+                        <li key={item.name}>
+                            <NavLink to={item.href} >
+                                {item.name}
+                            </NavLink>
+                        </li>
+                    )) }
+
                 </ul>
             </nav>
 

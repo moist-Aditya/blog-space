@@ -101,6 +101,10 @@ a {
 .sr-only {
   display: none;
 }
+.default-link {
+  color: var(--clr-dark);
+  text-decoration: underline;
+}
 /* Utility classes end here */
 
 
@@ -169,8 +173,13 @@ p {
   text-transform: uppercase;
   cursor: pointer;
 }
+.primary-navigation a[aria-current="page"] {
+  color: var(--clr-highlight);
+  text-decoration: underline wavy 2px var(--clr-primary);
+  font-weight: 700;
+}
 .primary-navigation a:hover {
-  color: hsla(0, 0%, 100%, .5);
+  color: var(--clr-dark);
 }
 .mobile-nav-toggle {
   z-index: 9999;

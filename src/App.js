@@ -1,6 +1,7 @@
 import './App.css';
 import BlogDetails from './BlogDetails';
 import Create from './Create';
+import NotFound from './NotFound';
 import Home from './home';
 import Navbar from './navBar';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
@@ -31,6 +32,9 @@ function App() {
             
             {/* Blog details */}
             <Route path='/blogs/:id' element={<BlogDetails />} />
+
+            {/* 404 Not Found */}
+            <Route path='/*' element={<NotFound />} />
 
           </Routes>
         </div>
