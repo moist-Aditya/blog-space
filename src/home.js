@@ -12,6 +12,10 @@ const Home = () => {
 
     return (
         <div className="home">
+            
+            {/* Progress bar */}
+            <div id="progress"></div>
+
             {/* Search bar */}
             <div className="search-bar flex">
                 <label>Search</label>
@@ -24,10 +28,12 @@ const Home = () => {
             </div>
                 
 
+            {/* Blogs start here */}
             {error && <div>Error: {error}...</div>}
             {isPending && <div>Loading...</div>}
             {/* {blogs && <BlogList blogs={blogs} title="Orbiting All Blogs..."/>} */}
             {filteredBlogs && <BlogList blogs={filteredBlogs} title="Orbiting All Blogs..." />}
+
         </div>
     );
 }
