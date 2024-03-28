@@ -22,6 +22,21 @@ html {
   color-scheme: dark light;
   hanging-punctuation: first last;
   scroll-behavior: smooth;
+
+  /* scrollbar-width: thin; */
+}
+
+::-webkit-scrollbar {
+  width: 6px; /* Thin scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Track color */
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--clr-highlight); /* Thumb color */
+  border-radius: 2px; /* Rounder corners */
 }
 
 /* min body height */
@@ -331,14 +346,21 @@ main {
   color: var(--clr-highlight);
 }
 
-.search-bar {
+.search-bar-container {
   justify-content: end;
+}
+.search-bar {
+  padding-left: 5rem;
+  border-radius: .2em;
+  background-color: var(--clr-black);
+  background: linear-gradient(90deg, rgba(255,255,255,0) 10%, var(--clr-black) 100%);
 }
 .search-bar label {
   font-size: 1.4rem;
 }
 .search-bar input {
   padding: .2rem 1rem;
+  background-color: transparent;
 }
 
 article {
@@ -425,3 +447,23 @@ button:hover {
 }
 /* Main end */
 
+
+
+/* Login page start */
+.otp-field {
+  justify-content: center;
+  margin: 4rem 0;
+  --gap: 1.2rem;
+}
+.otp-input{
+  font-size: 2rem;
+  text-align: center;
+  width: 4rem;
+  aspect-ratio: 1;
+  border-radius: .2em;
+  border-bottom: var(--clr-dark) solid 3px;
+}
+.otp-input:focus {
+  border-bottom: var(--clr-highlight) solid 2px;
+}
+/* Login page end */

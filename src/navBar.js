@@ -5,7 +5,7 @@ const Navbar = () => {
     const navigation = [
         { name: 'Home', href: '/' },
         { name: 'Create', href: '/create' },
-        { name: 'About', href: '/about' },
+        { name: 'Login', href: '/login' },
         { name: 'Contact', href: '/contact' }
     ];
 

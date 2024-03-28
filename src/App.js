@@ -1,6 +1,7 @@
 import './App.css';
 import BlogDetails from './BlogDetails';
 import Create from './Create';
+import LoginForm from './Login';
 import NotFound from './NotFound';
 import Home from './home';
 import Navbar from './navBar';
@@ -32,6 +33,9 @@ function App() {
             
             {/* Blog details */}
             <Route path='/blogs/:id' element={<BlogDetails />} />
+
+            {/* Login */}
+            <Route path='/login' element={<LoginForm />} />
 
             {/* 404 Not Found */}
             <Route path='/*' element={<NotFound />} />

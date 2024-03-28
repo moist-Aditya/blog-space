@@ -17,14 +17,16 @@ const Home = () => {
             <div id="progress"></div>
 
             {/* Search bar */}
-            <div className="search-bar flex">
-                <label>Search</label>
-                <input
-                    type="text"
-                    placeholder="Enter the title.."
-                    value={search}
-                    onChange={(e) => setSearch(e.target.value)}
-                />
+            <div className="search-bar-container flex">
+                <div className="search-bar flex">
+                    <label>Search</label>
+                    <input
+                        type="text"
+                        placeholder="Enter the title.."
+                        value={search}
+                        onChange={(e) => setSearch(e.target.value)}
+                    />
+                </div>
             </div>
                 
 
